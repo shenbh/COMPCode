@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Highcharts Example</title>
+
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/highcharts.js"></script>
+    <script src="js/modules/exporting.js"></script>
+    <script type="text/javascript">
+       $(function () {
+
+
+});
+
+
+
+       function init_data(data)
+       {
+          var  colors = ['#0989c4', '#8dc21f', '#434348', '#f7a35c', '#f15c80'];
+           var  colorsStyle = [
+               "<div style='width: 15px; height: 15px; background-color:#0989c4 ;display: inline-block; margin-left: 10px;'></div>",
+               "<div style='width: 15px; height: 15px; background-color:#8dc21f ;display: inline-block; margin-left: 10px;'></div>",
+               "<div style='width: 15px; height: 15px; background-color:#434348 ;display: inline-block; margin-left: 10px;'></div>",
+               "<div style='width: 15px; height: 15px; background-color:#f7a35c ;display: inline-block; margin-left: 10px;'></div>",
+               "<div style='width: 15px; height: 15px; background-color:#f15c80 ;display: inline-block; margin-left: 10px;'></div>"
+
+
+              ];
+           console.log(data);
+           var obj =JSON.parse(data);
+           var arrx = obj.jx_level_x.split(',');
+
+           var arry = obj.jx_level_y.split(',');
+           var covert_arry = new Array();
+           var title = obj.jx_level_y_title;  //是否称职 标题
+//           $.each(obj, function(root_index,root_value ) {
+//
+//               $.each(this.childList, function(index,value) {
+////                   arrx.push(value.id_key);
+//
+//               });
+//                var content= colorsStyle[root_index] +root_value.id_key;
+//               $("#laber").append(content);
+//
+//           });
+
+           $.each(arry, function(index,value) {
+
+
+               var obj_data = new  Object();
+               obj_data.y=parseFloat(value);
+               if(obj_data.y==1)
+               {
+                   obj_data.color =colors[0];
+                   obj_data.name = '待改进';
+               }
+               else if(obj_data.y==2)
+               {
+                   obj_data.color =colors[1];
+                   obj_data.name = '称职';
+               }
+               else if(obj_data.y==3)
+               {
+                   obj_data.color =colors[2];
+                   obj_data.name = '良好';
+               }
+               else if (obj_data.y==4){
+                  obj_data.color =colors[3];
+                  obj_data.name = '优良';
+               }
+               else if(obj_data.y==5)
+               {
+                   obj_data.color =colors[4];
+                   obj_data.name = '优秀';
+               }
+               else
+               {
+                   obj_data.color =colors[4];
+                   obj_data.name = '其他';
+               }
+
+               covert_arry.push(obj_data);
+           });
+
+
+            //是否包含这些类别
+           if(title.indexOf("待改进") >= 0 )
+           {
+               var content= colorsStyle[0] +'待改进';
+               $("#laber").append(content);
+           }
+          if(title.indexOf('称职')>= 0 )
+           {
+               var content= colorsStyle[1] +'称职';
+               $("#laber").append(content);
+           }
+            if(title.indexOf('良好') >= 0 )
+           {
+               var content= colorsStyle[2] +'良好';
+               $("#laber").append(content);
+           }
+           if(title.indexOf('优良') >= 0 )
+           {
+               var content= colorsStyle[3] +'优良';
+               $("#laber").append(content);
+           }
+           if(title.indexOf('优秀')>= 0 )
+           {
+               var content= colorsStyle[4] +'优秀';
+               $("#laber").append(content);
+           }
+//           else
+//           {
+//               var content= colorsStyle[4] +'其他';
+//               $("#laber").append(content);
+//           }
+
+
+
+           var chart =   $('#container').highcharts({
+               chart: {
+                   type: 'column'
+               },
+               title: {
+                   text: ''
+               },
+               subtitle: {
+                   text: ''
+               },
+               xAxis: {
+                   categories: arrx
+
+
+
+               },
+               yAxis: {
+                   min: 0,
+                   title: {
+                       text: '百分比'
+                   }
+               },
+               tooltip: {
+                   pointFormat: '<b>{point.y:.1f} %</b>'
+               },
+               plotOptions: {
+                   column: {
+                       pointPadding: 0.2,
+                       borderWidth: 0
+                   }
+               },
+
+//               series: [{
+//
+//                   data: [{'color':'#0989c4','y':0},{'color':'#0989c4','y':20},{'color':'#8dc21f','y':20},{'color':'#8dc21f','y':30}]
+//
+//
+//               }],
+
+                series: [{
+
+                   data: covert_arry
+
+
+               }],
+               credits: {
+                   enabled:false
+               },
+               exporting: {
+                   enabled:false
+               },
+               legend:{enabled:false}
+
+           });
+
+
+       }
+    </script>
+</head>
+<body>
+
+<div id="container" style="width: 100%; height: 220px; margin: 0 auto"></div>
+<div id="laber" style="width: 100%; margin: 0 auto; text-align: center"></div>
+</body>
+</html>

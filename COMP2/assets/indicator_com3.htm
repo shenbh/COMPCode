@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Highcharts Example</title>
+
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/highcharts.js"></script>
+    <script src="js/modules/exporting.js"></script>
+    <script type="text/javascript">
+       $(function () {
+
+
+});
+
+//       {
+//           "childList": [
+//           {
+//               "xData": "软件园1区",
+//               "yData": "20"
+//           },
+//           {
+//               "xData": "软件园2区",
+//               "yData": "30"
+//           }
+//       ],
+//               "hoverText": "",
+//               "key": "",
+//               "xData": "话务1室",
+//               "yData": "0"
+//       },
+//       {
+//           "childList": [
+//           {
+//               "xData": "12580区",
+//               "yData": "20"
+//           },
+//           {
+//               "xData": "乌山四区",
+//               "yData": "20"
+//           }
+//       ],
+//               "hoverText": "",
+//               "key": "",
+//               "xData": "话务2室",
+//               "yData": "0"
+//       }
+
+       function init_data(data)
+       {
+          var  colors = ['#0989c4', '#8dc21f', '#434348', '#f7a35c', '#f15c80'];
+           var  colorsStyle = [
+               "<div style='width: 15px; height: 15px; background-color:#0989c4 ;display: inline-block; margin-left: 10px;'></div>",
+               "<div style='width: 15px; height: 15px; background-color:#8dc21f ;display: inline-block; margin-left: 10px;'></div>",
+               "<div style='width: 15px; height: 15px; background-color:#434348 ;display: inline-block; margin-left: 10px;'></div>",
+               "<div style='width: 15px; height: 15px; background-color:#f7a35c ;display: inline-block; margin-left: 10px;'></div>",
+               "<div style='width: 15px; height: 15px; background-color:#f15c80 ;display: inline-block; margin-left: 10px;'></div>"
+
+
+              ];
+           console.log(data);
+           var obj =JSON.parse(data);
+           var arrx = new Array();
+
+           var arry = new Array();
+           $.each(obj, function(root_index,root_value ) {
+
+               $.each(this.childList, function(index,value) {
+                   arrx.push(value.xData);
+                   var obj_data = new  Object();
+                   obj_data.y=parseFloat(value.yData);
+                   obj_data.color =colors[root_index];
+                   obj_data.name = root_value.xData;
+                   arry.push(obj_data);
+               });
+                var content= colorsStyle[root_index] +root_value.xData;
+               $("#laber").append(content);
+
+           });
+//            var my_series = new Array();
+//           var my_data = new Array();
+//           my_data.push(arry);
+//           my_series.push(arry);
+
+           var chart =   $('#container').highcharts({
+               chart: {
+                   type: 'column'
+               },
+               title: {
+                   text: ''
+               },
+               subtitle: {
+                   text: ''
+               },
+               xAxis: {
+                   categories: arrx,
+                   labels: {
+
+                       rotation: 0,
+                       fontSize: '13px',
+                       color: 'black',
+                       style: {
+                           writingMode: 'tb-rl' //文字竖排样式
+
+                       },
+                       y:35
+                   }
+
+
+               },
+               yAxis: {
+                   min: 0,
+                   title: {
+                       text: '百分比'
+                   }
+               },
+               tooltip: {
+                   pointFormat: '<b>{point.y:.1f} %</b>'
+               },
+               plotOptions: {
+                   column: {
+                       pointPadding: 0.2,
+                       borderWidth: 0
+                   }
+               },
+
+//               series: [{
+//
+//                   data: [{'color':'#0989c4','y':0},{'color':'#0989c4','y':20},{'color':'#8dc21f','y':20},{'color':'#8dc21f','y':30}]
+//
+//
+//               }],
+
+                series: [{
+
+                   data: arry
+
+
+               }],
+               credits: {
+                   enabled:false
+               },
+               exporting: {
+                   enabled:false
+               },
+               legend:{enabled:false}
+
+           });
+
+
+       }
+    </script>
+</head>
+<body>
+
+<div id="container" style="width: 100%; height: 220px; margin: 0 auto"></div>
+<div id="laber" style="width: 100%; margin: 0 auto; text-align: center"></div>
+</body>
+</html>

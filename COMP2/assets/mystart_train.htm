@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Highcharts Example</title>
+
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/highcharts.js"></script>
+    <script src="js/modules/exporting.js"></script>
+    <script type="text/javascript">
+       $(function () {
+
+
+});
+
+
+
+       function init_data(data)
+       {
+
+           console.log(data);
+           var obj =JSON.parse(data);
+           //个人值
+           var arrpx = obj.px_val_p_x.split(',');
+           var arrpy = obj.px_val_p_y.split(',');
+
+           //基准值
+           var arrjx = obj.px_val_j_x.split(',');
+           var arrjy = obj.px_val_j_y.split(',');
+
+           //转换数值型
+            var float_arrpy = new Array();
+            var float_arrjy = new Array();
+           $.each(arrpy, function(index,value) {
+
+               float_arrpy.push(parseFloat(value));
+
+           });
+           $.each(arrjy, function(index,value) {
+
+               float_arrjy.push(parseFloat(value));
+
+           });
+
+           var series = new Array();
+            var pdata = new Object();
+           pdata.name="个人值";
+           pdata.data=float_arrpy;
+           pdata.color ="#0989c4";
+
+           var jdata = new Object();
+           jdata.name="基准值";
+           jdata.data=float_arrjy;
+           jdata.color ="#8dc21f";
+
+           series.push(pdata);
+           series.push(jdata);
+
+           var chart =   $('#container').highcharts({
+               chart: {
+                   type: 'column'
+               },
+               title: {
+                   text: ''
+               },
+               subtitle: {
+                   text: ''
+               },
+               xAxis: {
+                   categories: arrpx
+
+
+
+               },
+               yAxis: {
+                   min: 0,
+                   title: {
+                       text: ''
+                   }
+               },
+               tooltip: {
+                   pointFormat: '<b>{point.y:.1f} </b>'
+               },
+               plotOptions: {
+                   column: {
+                       pointPadding: 0.2,
+                       borderWidth: 0
+                   }
+               },
+
+//               series: [{
+//
+//                   data: [{'color':'#0989c4','y':0},{'color':'#0989c4','y':20},{'color':'#8dc21f','y':20},{'color':'#8dc21f','y':30}]
+//
+//
+//               }],
+
+                series: series,
+               credits: {
+                   enabled:false
+               },
+               exporting: {
+                   enabled:false
+               },
+               legend:{enabled:true}
+
+           });
+
+
+       }
+    </script>
+</head>
+<body>
+
+<div id="container" style="width: 100%; height: 220px; margin: 0 auto"></div>
+<div id="laber" style="width: 100%; margin: 0 auto; text-align: center"></div>
+</body>
+</html>

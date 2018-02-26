@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <TextView
+        android:id="@+id/fwzl"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="话务预警：0"
+        android:textColor="@color/app_green"
+        android:textSize="13sp" />
+
+    <include layout="@layout/line" />
+
+    <TextView
+        android:id="@+id/uskh"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="故障情况：0"
+        android:textColor="@color/app_green"
+        android:textSize="13sp" />
+
+    <include layout="@layout/line" />
+
+    <TextView
+        android:id="@+id/jssm"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="投诉情况：0"
+        android:textColor="@color/app_green"
+        android:textSize="13sp" />
+
+</LinearLayout>

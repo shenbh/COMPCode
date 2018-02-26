@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Highcharts Example</title>
+
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/highcharts.js"></script>
+    <script src="js/modules/exporting.js"></script>
+    <script type="text/javascript">
+       $(function () {
+
+
+});
+
+       function init_data(data)
+       {
+           console.log(data);
+           var obj =JSON.parse(data);
+           var arrx = obj.histogram_x.split(',');
+           var arry = obj.histogram_y.split(','); //数值数组数据
+//           var float_arr_x = new Array//数值数组数据
+           var float_arr_y = new Array();
+           $.each(arry, function() {
+		         var temp = parseFloat(this);
+				 if (isNaN(temp)) {
+                    float_arr_y.push(0);
+                 } else {
+                    float_arr_y.push(parseFloat(this));
+                 }
+           });
+
+           var chart =   $('#container').highcharts({
+               chart: {
+                   type: 'column'
+               },
+               title: {
+                   text: '近四个季度积分记录'
+               },
+               subtitle: {
+                   text: ''
+               },
+               xAxis: {
+                   categories: arrx,
+                   labels: {
+
+                       rotation: -45
+                   }
+
+               },
+               yAxis: {
+                   min: 0,
+                   title: {
+                       text: ''
+                   }
+               },
+               tooltip: {
+                   pointFormat: '<b>{point.y:.1f} </b>'
+               },
+               plotOptions: {
+                   column: {
+                       pointPadding: 0.2,
+                       borderWidth: 0
+                   }
+               },
+               series: [{
+
+                   data: float_arr_y
+
+               }],
+               credits: {
+                   enabled:false
+               },
+               exporting: {
+                   enabled:false
+               },
+               legend:{enabled:false}
+
+           });
+
+
+       }
+    </script>
+</head>
+<body>
+
+<div id="container" style="width: 100%; height: 240px; margin: 0 auto"></div>
+
+</body>
+</html>

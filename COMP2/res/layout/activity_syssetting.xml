@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_head" />
+
+    <ImageView style="@style/layout_image_hline_style" />
+
+    <ScrollView style="@style/layout_mm_style" >
+
+        <LinearLayout
+            style="@style/layout_mm_style"
+            android:orientation="vertical"
+            android:padding="5dip" >
+
+<!--             <LinearLayout -->
+<!--                 android:id="@+id/syssetting_notice" -->
+<!--                 android:layout_width="match_parent" -->
+<!--                 android:layout_height="60dp" -->
+<!--                 android:clickable="true" -->
+<!--                 android:onClick="llronclick" -->
+<!--                 android:orientation="horizontal" -->
+<!--                 android:paddingLeft="5dp" -->
+<!--                 android:paddingRight="0dp" > -->
+
+<!--                 <ImageView -->
+<!--                     style="@style/layout_image_style" -->
+<!--                     android:layout_weight="0.1" -->
+<!--                     android:src="@drawable/notificationandpush" /> -->
+
+<!--                 <TextView -->
+<!--                     style="@style/head_title_second_style" -->
+<!--                     android:layout_weight="0.8" -->
+<!--                     android:paddingLeft="20dp" -->
+<!--                     android:paddingRight="0dp" -->
+<!--                     android:text="@string/notice_remind" -->
+<!--                     android:textColor="@color/gray" /> -->
+
+<!--                 <CheckBox -->
+<!--                 android:id="@+id/ck_noti" -->
+<!--                 style="@style/layout_image_style" -->
+<!--                 android:layout_marginRight="15dp" -->
+<!--                 android:layout_weight="0.1" -->
+<!--                 android:gravity="center" -->
+<!--                 /> -->
+
+<!--                 <com.newland.comp.view.SwitchButton -->
+<!--                     android:id="@+id/switch_button" -->
+<!--                     style="@style/layout_image_style" -->
+<!--                     android:layout_height="30dp" -->
+<!--                     android:layout_marginRight="25dp" -->
+<!--                     android:layout_weight="0.1" /> -->
+<!--             </LinearLayout> -->
+
+<!--             <ImageView -->
+<!--                 android:layout_width="match_parent" -->
+<!--                 android:layout_height="1dp" -->
+<!--                 android:layout_marginLeft="10dp" -->
+<!--                 android:layout_marginRight="10dp" -->
+<!--                 android:background="@color/app_gray_drak" /> -->
+
+            <LinearLayout
+                android:id="@+id/syssetting_clear_cache"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:clickable="true"
+                android:onClick="llronclick"
+                android:paddingLeft="5dp"
+                android:paddingRight="0dp" >
+
+                <ImageView
+                    style="@style/layout_image_style"
+                    android:layout_weight="0.1"
+                    android:src="@drawable/clearcache" />
+
+                <TextView
+                    style="@style/head_title_second_style"
+                    android:layout_weight="0.8"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="0dp"
+                    android:text="@string/clear_cache"
+                    android:textColor="@color/gray" />
+
+                <ImageView
+                    style="@style/layout_image_style"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="0.1"
+                    android:gravity="center"
+                    android:src="@drawable/next" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/app_gray_drak" />
+
+            <LinearLayout
+                android:id="@+id/syssetting_psw"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:clickable="true"
+                android:onClick="llronclick"
+                android:paddingLeft="5dp"
+                android:paddingRight="0dp" >
+
+                <ImageView
+                    style="@style/layout_image_style"
+                    android:layout_weight="0.1"
+                    android:src="@drawable/modificationpsw" />
+
+                <TextView
+                    style="@style/head_title_second_style"
+                    android:layout_weight="0.8"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="0dp"
+                    android:text="@string/change_password"
+                    android:textColor="@color/gray" />
+
+                <ImageView
+                    style="@style/layout_image_style"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="0.1"
+                    android:gravity="center"
+                    android:src="@drawable/next" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/app_gray_drak" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center" />
+
+            <LinearLayout
+                android:id="@+id/syssetting_mobileinfo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:clickable="true"
+                android:onClick="llronclick"
+                android:paddingLeft="5dp"
+                android:paddingRight="0dp" >
+
+                <ImageView
+                    style="@style/layout_image_style"
+                    android:layout_weight="0.1"
+                    android:src="@drawable/mobileinfo" />
+
+                <TextView
+                    style="@style/head_title_second_style"
+                    android:layout_weight="0.8"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="0dp"
+                    android:text="@string/mobile_info"
+                    android:textColor="@color/gray" />
+
+                <ImageView
+                    style="@style/layout_image_style"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="0.1"
+                    android:gravity="center"
+                    android:src="@drawable/next" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/app_gray_drak" />
+
+            <!-- <LinearLayout -->
+            <!-- android:id="@+id/syssetting_feedback" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="60dp" -->
+            <!-- android:clickable="true" -->
+            <!-- android:onClick="llronclick" -->
+            <!-- android:paddingLeft="5dp" -->
+            <!-- android:paddingRight="0dp" > -->
+
+
+            <!-- <ImageView -->
+            <!-- style="@style/layout_image_style" -->
+            <!-- android:layout_weight="0.1" -->
+            <!-- android:src="@drawable/aboutus" /> -->
+
+
+            <!-- <TextView -->
+            <!-- style="@style/head_title_second_style" -->
+            <!-- android:layout_weight="0.8" -->
+            <!-- android:paddingLeft="20dp" -->
+            <!-- android:paddingRight="0dp" -->
+            <!-- android:text="@string/feedback" -->
+            <!-- android:textColor="@color/gray" /> -->
+
+
+            <!-- <ImageView -->
+            <!-- style="@style/layout_image_style" -->
+            <!-- android:layout_height="30dp" -->
+            <!-- android:layout_marginRight="15dp" -->
+            <!-- android:layout_weight="0.1" -->
+            <!-- android:gravity="center" -->
+            <!-- android:src="@drawable/next" /> -->
+            <!-- </LinearLayout> -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/app_gray_drak" />
+
+            <LinearLayout
+                android:id="@+id/syssetting_version"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:clickable="true"
+                android:onClick="llronclick"
+                android:paddingLeft="5dp"
+                android:paddingRight="0dp" >
+
+                <ImageView
+                    style="@style/layout_image_style"
+                    android:layout_weight="0.1"
+                    android:src="@drawable/versioncheck" />
+
+                <LinearLayout
+                    android:id="@+id/syssetting_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_weight="0.8" >
+
+                    <TextView
+                        style="@style/head_title_second_style"
+                        android:layout_width="122dp"
+                        android:layout_weight="0.38"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="0dp"
+                        android:text="@string/version_updating"
+                        android:textColor="@color/gray" />
+
+                    <TextView
+                        android:id="@+id/current_version"
+                        style="@style/head_title_second_style"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="0.5"
+                        android:gravity="right"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/current_version"
+                        android:textColor="@color/gray"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <ImageView
+                    style="@style/layout_image_style"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="0.1"
+                    android:gravity="center"
+                    android:src="@drawable/next" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/app_gray_drak" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center" />
+
+            <Button
+                android:id="@+id/syssetting_out"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/btn_login"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/logout"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

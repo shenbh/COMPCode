@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/pr_detail_listiterm_image1"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:src="@drawable/diandian2" />
+
+        <ImageView
+            android:id="@+id/pr_detail_listiterm_image2"
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:src="@color/app_text_gray" />
+
+        <ImageView
+            android:id="@+id/pr_detail_listiterm_image3"
+            android:layout_width="1dp"
+            android:layout_height="46dp"
+            android:layout_gravity="center"
+            android:src="@color/app_text_gray" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/pr_detail_listiterm_txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:paddingTop="3dp"
+            android:text="审核人"
+            android:textColor="@color/app_text_gray"
+            android:textSize="15sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:paddingTop="3dp" >
+
+            <TextView
+                android:id="@+id/pr_detail_listiterm_txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="处理人："
+                android:textColor="@color/app_text_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/pr_detail_listiterm_txt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_toRightOf="@id/pr_detail_listiterm_txt2"
+                android:textColor="@color/app_text_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/pr_detail_listiterm_txt4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:layout_toLeftOf="@+id/pr_detail_listiterm_txt5"
+                android:text="处理意见："
+                android:textColor="@color/app_text_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/pr_detail_listiterm_txt5"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/app_text_gray"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/pr_detail_listiterm_txt6"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/app_text_gray"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

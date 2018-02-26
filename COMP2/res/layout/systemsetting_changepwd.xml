@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="@color/app_gray"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_head" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"  android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <EditText
+                android:id="@+id/changepwd_originalpwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.2"
+                android:password="true"
+                android:background="@drawable/input"
+                android:drawablePadding="20dp"
+                android:hint="@string/hint_originalpwd"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp" 
+            android:orientation="horizontal" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        <EditText
+            android:id="@+id/changepwd_newpwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:password="true"
+             android:layout_weight="0.2"
+             
+            android:background="@drawable/input"
+            android:drawablePadding="20dp"
+            android:hint="@string/hint_newpwd"
+            android:textSize="15sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+        
+   <LinearLayout
+            android:layout_width="match_parent" 
+            android:layout_height="50dp"
+            android:orientation="horizontal" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+       <EditText
+            android:id="@+id/changepwd_surepwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.2"
+            android:password="true"
+            android:background="@drawable/input"
+            android:drawablePadding="20dp"
+            android:hint="@string/hint_surepwd"
+            android:textSize="15sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+        
+   
+      <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"   android:layout_marginTop="30dp"
+            android:orientation="horizontal" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+      
+        <Button
+            android:id="@+id/changepwd_save"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+         
+            android:background="@drawable/btn_login"
+            android:gravity="center"      android:layout_weight="0.2"
+            android:text="@string/save_pwd"
+            android:textSize="18sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+       
+
+    </LinearLayout>
+
+</LinearLayout>

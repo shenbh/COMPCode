@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_head"/>
+    <View  android:layout_width="match_parent" android:layout_height="10dp"/>
+    <include layout="@layout/line_nopadding"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp" android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"  
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <EditText
+            android:id="@+id/ed_person"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/bg_border_gray"
+            android:hint="人员名字" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1.2" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_login"
+            android:onClick="btn_search"
+            android:text="搜索"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <include layout="@layout/line_nopadding"/>
+    <com.newland.comp.view.PullRefreshListView
+        android:id="@+id/list_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#00000000"
+        android:divider="@null"
+        android:fadingEdge="none"
+        android:focusable="true"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false" />
+
+</LinearLayout>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_gray"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_head2" />
+<!--     <ImageView -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="1dp" -->
+<!--         android:background="@color/app_gray_drak2" /> -->
+    <HorizontalScrollView
+        android:id="@+id/mColumnHorizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#eeeeee"
+        android:fillViewport="true"
+        android:gravity="center_horizontal"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/hor_lin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:background="#eeeeee"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/gzd"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:background="@color/transparent"
+                android:onClick="onClick"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/gzd_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="工资单"
+                    android:textColor="@color/app_green"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/gzd_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="2.5dp"
+                    android:src="@color/app_green" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gzl"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:onClick="onClick"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="0dp" >
+
+                <TextView
+                    android:id="@+id/gzl_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="工作量"
+                    android:textColor="@color/gray"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/gzl_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="2.5dp"
+                    android:src="@color/app_green"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fwzz"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:onClick="onClick"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="0dp" >
+
+                <TextView
+                    android:id="@+id/fwzz_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="服务质量"
+                    android:textColor="@color/gray"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/fwzz_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="2.5dp"
+                    android:src="@color/app_green"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/kqxx"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:onClick="onClick"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="0dp" >
+
+                <TextView
+                    android:id="@+id/kqxx_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="考勤信息"
+                    android:textColor="@color/gray"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/kqxx_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="2.5dp"
+                    android:src="@color/app_green"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/yxgzl"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="0dp" >
+
+                <TextView
+                    android:id="@+id/yxzl_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="营销工作量"
+                    android:textColor="@color/gray"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/yxzl_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="2.5dp"
+                    android:src="@color/app_green"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ybsc"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="0dp" >
+
+                <TextView
+                    android:id="@+id/ybsc_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="夜班时长"
+                    android:textColor="@color/gray"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/ybsc_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="2.5dp"
+                    android:src="@color/app_green"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/qtxx"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="0dp" >
+
+                <TextView
+                    android:id="@+id/qtxx_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="其他信息"
+                    android:textColor="@color/gray"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/qtxx_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="2.5dp"
+                    android:src="@color/app_green"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/app_gray_drak2" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/mViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

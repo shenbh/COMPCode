@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Highcharts Example</title>
+
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/highcharts.js"></script>
+    <script src="js/modules/exporting.js"></script>
+
+    <script type="text/javascript">
+//        5c5c5c
+        Highcharts.theme = {
+            colors: ['#8dc21f'],
+            chart: {
+                backgroundColor: "#868484",
+                style: {
+                    fontFamily: "Dosis, sans-serif"
+                }
+            },
+
+            title: {
+                style: {
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    color: 'white'
+
+                }
+            },
+            tooltip: {
+                borderWidth: 0,
+                backgroundColor: 'rgba(219,219,216,0.8)',
+                shadow: false
+            },
+            legend: {
+                itemStyle: {
+                    fontWeight: 'bold',
+                    fontSize: '13px'
+                }
+            },
+            xAxis: {
+                gridLineColor: '#848484',
+                lineColor: '#848484',
+                lineWidth: 0.5,
+                tickLength : 0,
+                gridLineDashStyle : 'longdash',
+                gridLineWidth: 0.3,
+                labels: {
+                    style: {
+                        color: 'white',
+                        fontSize: '12px'
+                    }
+                }
+            },
+
+            yAxis: {
+                gridLineWidth: 0.5,
+                gridLineColor: '#545454',
+                lineColor: '#545454',
+                lineWidth: 0.5,
+                title: {
+                    text:false
+                },
+                labels: {
+                    style: {
+                        color: 'white',
+                        fontSize: '12px'
+                    }
+                }
+            },
+            plotOptions: {
+                value: 0,
+                width: 1,
+                color: '#808080',
+                line: {
+                    dataLabels: {
+                        color: 'white',
+                        enabled: true
+                    },
+                    // enableMouseTracking: false
+                }
+            },
+
+            tooltip: {
+                enabled: false,
+                formatter: function() {
+                    return '<b>'+ '<font color="#FF0000">'+ this.series.name +'</font>'+'</b><br>';
+                }
+            },
+            // General
+
+
+        };
+
+        // Apply the theme
+        Highcharts.setOptions(Highcharts.theme);
+
+        function init_data(data) {
+//            console.log(data);
+            var obj = JSON.parse(data);
+//            console.log(obj.series_data);
+            var arr_x = obj.line_x.split(',');
+            var arr_y = obj.line_y.split(',');
+
+            var value_y = new Array(); //数值数组数据
+            $.each(arr_y, function () {
+               var temp = parseFloat(this);
+               if (isNaN(temp)) {
+                 value_y.push(0);
+               } else {
+                 value_y.push(parseFloat(this));
+               }
+            });
+
+            var chart = $('#container').highcharts({
+                chart: {
+                    type: 'line'
+                },
+                title: {
+                    text: obj.zb_name
+                },
+                subtitle: {
+                    text: ''
+                },
+                xAxis: {
+                    categories:arr_x
+                },
+                yAxis: {
+                    title: {
+                        text: ''
+                    }
+                },
+                plotOptions: {
+                    series: {
+                        cursor: 'pointer',
+                        events: {
+                            click: function(event) {
+//                                $("#result").html("<b>Result : index = "+event.point.x+" , series = "+this.name + ', x = '+event.point.category+' ,y = '+event.point.y+"</b>");
+                                console.log('index = '+ event.point.x+ 'x = '+event.point.category+' ,y = '+event.point.y);
+                                window.Android.getIndex(event.point.x,event.point.category);
+                            }
+                        }
+                    }
+
+
+                },
+                series: [
+                    {
+                        name: obj.zb_name,
+                        data: value_y
+                    }
+                ],
+                credits: {
+                    enabled: false
+                },
+                exporting: {
+                    enabled: false
+                },
+                legend:{enabled:false}
+
+            });
+
+
+        }
+
+    </script>
+
+
+</head>
+<body>
+
+
+<div id="container" style="min-width: 310px; height: 180px; margin: 0 auto; "></div>
+
+</body>
+</html>

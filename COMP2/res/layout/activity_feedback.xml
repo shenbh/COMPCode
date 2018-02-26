@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="end"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/feedback_title"
+        layout="@layout/title_head" />
+
+    <EditText
+        android:id="@+id/feedback_content"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/feedback_title"
+        android:layout_margin="10dp"
+      android:background="@drawable/bg_border_gray"
+        android:gravity="top"
+        android:imeOptions="actionDone"
+        android:lineSpacingExtra="6.0dp"
+        android:textColor="@color/black"
+        android:textSize="16.0sp" />
+
+    <TextView
+        android:id="@+id/feedback_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/feedback_content"
+        android:layout_alignRight="@+id/feedback_content" />
+
+    <Button
+        android:id="@+id/feedback_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/feedback_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/btn_broder"
+        android:text="提交"
+        android:textColor="@color/app_black"
+        android:textSize="18dp" />
+
+</RelativeLayout>

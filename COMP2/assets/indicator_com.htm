@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Highcharts Example</title>
+
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/highcharts.js"></script>
+    <script src="js/modules/exporting.js"></script>
+    <script type="text/javascript">
+       $(function () {
+
+
+});
+
+       function init_data(data)
+       {
+           console.log(data);
+           var obj =JSON.parse(data);
+           var arrx = obj.new_x.split(',');
+
+           var arry_hw1 = obj.hw1_new_y.split(','); //话务1数据
+           var arry_hw2 = obj.hw2_new_y.split(','); //话务2数据
+           var float_arr_y_hw1 = new Array();
+           var float_arr_y_hw2 = new Array();
+           $.each(arry_hw1, function() {
+              var temp = parseFloat(this);
+              if (isNaN(temp)) {
+                 float_arr_y_hw1.push(0);
+              } else {
+                 float_arr_y_hw1.push(parseFloat(this));
+              }
+
+           });
+           $.each(arry_hw2, function() {
+              var temp = parseFloat(this);
+              if (isNaN(temp)) {
+                float_arr_y_hw2.push(0);
+              } else {
+                float_arr_y_hw2.push(parseFloat(this));
+              }
+
+           });
+
+           var chart =   $('#container').highcharts({
+               chart: {
+                   type: 'column'
+               },
+               title: {
+                   text: ''
+               },
+               subtitle: {
+                   text: ''
+               },
+               xAxis: {
+                   categories: arrx,
+                   labels: {
+
+                       rotation: 0,
+                       fontSize: '13px',
+                       color: 'black',
+                       style: {
+                           writingMode: 'tb-rl' //文字竖排样式
+
+                       },
+                       y:35
+                   }
+
+
+               },
+               yAxis: {
+                   min: 0,
+                   title: {
+                       text: '百分比'
+                   }
+               },
+               tooltip: {
+                   pointFormat: '<b>{point.y:.1f} %</b>'
+               },
+               plotOptions: {
+                   column: {
+                       pointPadding: 0.2,
+                       borderWidth: 0
+                   }
+               },
+               series: [{
+                   name: '话务一室所属区域',
+                   data: float_arr_y_hw1,
+                   color: '#0989c4'
+
+               },{ name: '话务二室所属区域',
+                   data: float_arr_y_hw2,
+                   color: '#8dc21f'
+               }],
+               credits: {
+                   enabled:false
+               },
+               exporting: {
+                   enabled:false
+               },
+               legend:{enabled:true}
+
+           });
+
+
+       }
+    </script>
+</head>
+<body>
+
+<div id="container" style="width: 100%; height: 240px; margin: 0 auto"></div>
+
+</body>
+</html>

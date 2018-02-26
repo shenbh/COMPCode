@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical"
+   android:gravity="center"
+    android:background="@color/transparent"
+     >
+<!-- 		<TextView -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="20dp" -->
+<!--         android:textSize="12sp" -->
+<!--         android:gravity="center" -->
+<!--         android:text="3454532" -->
+<!--         android:textColor="@color/white"/> -->
+    
+    <ImageView
+        android:id="@+id/gridv_child_Image"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="6dp"
+        android:src="@drawable/ic_gonggao_pre" />
+
+    <TextView
+        android:id="@+id/gridv_child_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:layout_marginTop="3dp"
+        android:layout_gravity="center"
+        android:text="3454532"
+        android:textColor="@color/white"/>
+
+</LinearLayout>

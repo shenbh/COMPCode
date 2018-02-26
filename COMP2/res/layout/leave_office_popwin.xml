@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:focusable="true"
+    android:layout_height="wrap_content" android:background="@color/app_gray"
+    android:orientation="vertical" >
+    
+     <RelativeLayout   android:layout_width="match_parent"  android:id="@+id/top_layout"
+    android:layout_height="46dp"   android:background="@drawable/top_bg"
+    android:orientation="horizontal" >
+         
+         <TextView android:layout_width="match_parent" android:gravity="center"  android:id="@+id/pop_title" android:layout_toLeftOf="@+id/close"
+    android:layout_height="match_parent" android:text="离职移交手续办理须知"  android:singleLine="true"
+     android:layout_marginRight="5dp"/>
+         
+         
+         <Button  
+             android:id="@+id/close"
+              android:layout_width="30dp" android:layout_marginTop="5dp" android:layout_marginRight="5dp"
+    android:layout_height="30dp"  android:background="@drawable/closed" android:layout_alignParentRight="true"/>
+         
+     </RelativeLayout>
+     
+     
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="5dp" 
+                android:background="@drawable/bg_border_gray"
+                android:orientation="vertical"
+                android:padding="5dp" >
+ <ScrollView
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content" >
+				 <TextView
+				     		android:id="@+id/content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text="流程"
+                            android:textColor="@color/app_green"
+                            android:textSize="13sp" />
+                <!-- 第2行 -->
+</ScrollView>
+
+                </LinearLayout>
+                
+                
+            </LinearLayout>
+            
+        
+

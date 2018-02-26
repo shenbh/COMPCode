@@ -1,0 +1,67 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+		<script src="js/highcharts.js"></script>
+		<script src="js/modules/exporting.js"></script>
+		<script type="text/javascript">
+		function init_data(data)
+        {
+            console.log(data);
+            var obj =JSON.parse(data);
+            var pie_name_arr = obj.pie_name.split(',');
+            var pie_value_arr = obj.pie_value.split(',');
+            
+            var name_value_array = new Array(); //数值数组数据
+            for(var i=0;i<pie_value_arr.length;++i){
+               var temp = new Array();
+               temp.push(pie_name_arr[i]);
+               temp.push(parseFloat(pie_value_arr[i]));
+               name_value_array.push(temp);
+            }
+            
+            var charts =  $('#container').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+        },
+        title: {
+            text: '      近六个月薪酬分析图  单位/元        '
+        },
+        credits:{enabled:false},
+        exporting:{enabled:false},
+        tooltip: {
+    	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: '占比',
+            data: name_value_array
+        }]
+    });
+ }
+</script>
+	</head>
+	<body>
+
+<div id="container" style="min-height: 280px; margin: 0 auto"></div>
+
+	</body>
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" android:paddingLeft="7dp" android:paddingRight="7dp"
+    android:orientation="vertical" >
+
+      <TextView
+                android:id="@+id/skill_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="5dp"
+                android:gravity="left"
+                android:singleLine="true" android:text="呼入（10086）全球通技能线" android:textColor="@color/app_green"
+                android:textSize="16sp" />
+    
+    
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+<!--           <TextView -->
+<!--                 android:layout_width="match_parent" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                  android:layout_weight="1.2" -->
+<!--                 android:gravity="left" -->
+<!--                 android:singleLine="true" -->
+<!--                 android:text="标准量(>=650)：" -->
+<!--                 android:textSize="15sp" /> -->
+          
+           <TextView
+                android:id="@+id/standard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                android:gravity="left"
+                android:singleLine="true" 
+                android:text="标准量(>=650)：610.00"
+                android:textSize="14sp" />
+           
+<!--                      <TextView -->
+<!--                 android:layout_width="match_parent" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                  android:layout_weight="1.2" -->
+<!--                 android:gravity="left" -->
+<!--                 android:singleLine="true" -->
+<!--                 android:text="服务系数(>=1.4)：" -->
+<!--                 android:textSize="15sp" /> -->
+          <TextView
+                android:id="@+id/service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                android:gravity="left"
+                android:singleLine="true"
+                android:text="服务系数(>=1.4)：2.2"
+                android:textSize="14sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent" android:layout_marginTop="10dp"
+        android:layout_height="1dp"
+        android:background="@color/app_gray_drak" />
+
+</LinearLayout>

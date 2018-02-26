@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+
+
+        <include
+
+            layout="@layout/title_head" />
+
+
+<!--     <LinearLayout -->
+<!--         style="@style/layout_head_style" -->
+<!--         android:gravity="left|center_vertical" -->
+<!--         android:orientation="horizontal" > -->
+
+<!--         <TextView -->
+<!--             android:id="@+id/sys_userid" -->
+<!--             android:layout_width="wrap_content" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:layout_marginLeft="16dp" -->
+<!--             android:text="当前登录的用户id:" /> -->
+
+<!--         <TextView -->
+<!--             android:id="@+id/sys_userid_content" -->
+<!--             android:layout_width="wrap_content" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:text="TextView" /> -->
+<!--     </LinearLayout> -->
+<ImageView  android:layout_width="match_parent" android:layout_height="1dp"   android:background="@color/app_gray_drak"
+       android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
+
+    <LinearLayout
+        style="@style/layout_head_style"
+        android:gravity="left|center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/sys_versionname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="当前操作系统版本名:" />
+
+        <TextView
+            android:id="@+id/sys_versionname_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+    </LinearLayout>
+
+<ImageView  android:layout_width="match_parent" android:layout_height="1dp"   android:background="@color/app_gray_drak"
+       android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
+    <LinearLayout
+        style="@style/layout_head_style"
+        android:gravity="left|center_vertical"
+        android:orientation="horizontal" 
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/sys_versioncode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="当前操作系统版本号:" />
+
+        <TextView
+            android:id="@+id/sys_versioncode_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+    </LinearLayout>
+    
+    
+ <LinearLayout
+        style="@style/layout_head_style"
+        android:gravity="left|center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/sys_clientversioncode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="客户端系统版本号:" />
+
+        <TextView
+            android:id="@+id/sys_clientversiontcode_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+    </LinearLayout>
+    <ImageView  android:layout_width="match_parent" android:layout_height="1dp"   android:background="@color/app_gray_drak"
+       android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
+</LinearLayout>

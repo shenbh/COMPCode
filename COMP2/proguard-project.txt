@@ -1,0 +1,190 @@
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in ${sdk.dir}/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+-optimizationpasses 5
+-dontusemixedcaseclassnames
+-dontskipnonpubliclibraryclasses
+-dontpreverify
+-verbose
+
+
+-libraryjars libs/universal-image-loader-1.9.2-SNAPSHOT-with-sources.jar
+-libraryjars libs/afinal_0.5_bin.jar
+-libraryjars libs/android-support-v4.jar
+
+-libraryjars libs/nineoldandroids-2.4.0.jar
+-libraryjars libs/armeabi/libbitherjni.so
+-libraryjars libs/armeabi/libjpegbither.so
+-libraryjars libs/fastjson-1.2.4.jar
+-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
+-dontwarn net.tsz.afinal.** 
+-keep class net.tsz.afinal.** { *; } 
+-keep public class * extends net.tsz.afinal.**  
+-keep public interface net.tsz.afinal.** {*;}
+-dontwarn com.alibaba.fastjson.**
+-keep class com.alibaba.fastjson.** { *; } 
+-keep public class * extends com.alibaba.fastjson.**  
+-keep public interface com.alibaba.fastjson.** {*;}
+
+-keep class android.net.http.SslError
+-keep class android.webkit.**{*;}
+
+-keep class android.support.v4.** { *; } 
+
+
+-keep public class * extends android.app.Fragment
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.app.backup.BackupAgentHelper
+-keep public class * extends android.preference.Preference
+-keep public class com.android.vending.licensing.ILicensingService
+-keep public class * extends android.support.v4.**
+
+
+-keepclasseswithmembers class com.alibaba.fastjson.support.odps.udf.CodecCheck.** {
+     <fields>;
+     <methods>;
+}
+-keepclasseswithmembers class com.alibaba.fastjson.support.odps.udf.JSONArrayAdd.** {
+     <fields>;
+     <methods>;
+}
+-keepclasseswithmembers class com.alibaba.fastjson.support.odps.udf.JSONContains.** {
+     <fields>;
+     <methods>;
+}
+-keepclasseswithmembers class com.alibaba.fastjson.support.odps.udf.JSONContainsValue.** {
+     <fields>;
+     <methods>;
+}
+-keepclasseswithmembers class com.alibaba.fastjson.support.odps.udf.JSONExtract.** {
+     <fields>;
+     <methods>;
+}
+-keepclasseswithmembers class com.alibaba.fastjson.support.odps.udf.JSONSet.** {
+     <fields>;
+     <methods>;
+}
+-keepclasseswithmembers class com.alibaba.fastjson.support.odps.udf.JSONSize.** {
+     <fields>;
+     <methods>;
+}
+
+-keepclasseswithmembers class com.alibaba.fastjson.support.odps.udf.JSONTuple.** {
+     <fields>;
+     <methods>;
+}
+-keepclasseswithmembers class com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter.** {
+     <fields>;
+     <methods>;
+}
+
+-keepclasseswithmembers class com.alibaba.fastjson.support.spring.FastJsonJsonView.** {
+     <fields>;
+     <methods>;
+}
+-keepclasseswithmembers class com.alibaba.fastjson.parser.deserializer.Jdk8DateCodec.** {
+     <fields>;
+     <methods>;
+}
+-keepclasseswithmembers class com.alibaba.fastjson.serializer.ColorCodec.** {
+     <fields>;
+     <methods>;
+}
+
+-keepclasseswithmembers class com.alibaba.fastjson.serializer.FontCodec.** {
+     <fields>;
+     <methods>;
+}
+-keepclasseswithmembers class com.alibaba.fastjson.serializer.PointCodec.** {
+     <fields>;
+     <methods>;
+}
+
+
+
+
+
+
+
+
+-assumenosideeffects class android.util.Log {
+	public static boolean isLoggable(java.lang.String, int);
+	public static int v(...);
+	public static int i(...);
+	public static int w(...);
+	public static int d(...);
+	public static int e(...);
+}
+
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
+
+-keepclasseswithmembernames class * {
+    public <init>(android.content.Context, android.util.AttributeSet);
+}
+
+-keepclasseswithmembernames class * {
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+}
+
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+-keep class * implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator *;
+}
+  
+-keep class * implements com.base.utils.helper.INoProguard {
+	*;
+} 
+-keep class * implements java.io.Serializable {
+	*;
+} 
+
+-keep class com.newland.comp.utils.* {
+	*;
+} 
+-keep class com.newland.comp.bean.* {
+	*;
+} 
+-keep class com.newland.comp.bean.hr.* {
+	*;
+} 
+-keep class com.newland.comp.bean.indicator.* {
+	*;
+}
+-keep class com.newland.comp.bean.more.* {
+	*;
+}
+-keep class com.newland.comp.bean.my.* {
+	*;
+}
+-keep class com.newland.comp.bean.process.* {
+	*;
+}
+
+-keepattributes Signature

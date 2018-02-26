@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@color/white"
+    android:orientation="vertical" >
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="59dp"
+    android:orientation="vertical">
+     <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="服务质量aa"
+        android:textColor="@color/black"
+        android:textSize="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="原始例数"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/tv_original_number"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="1223"
+            android:layout_marginLeft="3dp"
+            android:textColor="@color/app_green"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/tv_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="冗余例数"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/tv_redundance_number"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:text="1223"
+            android:textColor="@color/app_green"
+            android:textSize="13dp" />
+         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="考核例数"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/tv_examine_value"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:text="1223"
+            android:textColor="@color/app_green"
+            android:textSize="13dp" />
+    </LinearLayout>
+</LinearLayout>
+   
+<ImageView  android:layout_width="match_parent" android:layout_height="1dp"   android:background="@color/app_gray_drak"
+       android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
+
+</LinearLayout>

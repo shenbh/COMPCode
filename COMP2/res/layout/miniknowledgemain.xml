@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_gray" >
+
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <include layout="@layout/title_head" />
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/keyandtitle"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/edt_key"
+        android:layout_below="@+id/title"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/spanner_final"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="8dp"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/edt_key"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_margin="3dp"
+        android:layout_toRightOf="@+id/title_item"
+        android:background="@color/white"
+        android:hint="请输入关键字"
+        android:padding="3dp" />
+
+    <!-- 全文内容与搜索列表 -->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/edt_key"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <GridView
+            android:id="@+id/gridview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:horizontalSpacing="10dp"
+            android:numColumns="4"
+            android:verticalSpacing="10dp" >
+        </GridView>
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/edt_key"
+        android:layout_alignTop="@+id/edt_key"
+        android:src="@drawable/abc_ic_search" />
+
+    <Spinner
+        android:id="@+id/title_item"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/edt_key"
+        android:layout_below="@+id/title"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@+id/keyandtitle"
+        android:background="@drawable/spanner_final"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="8dp"
+        android:textSize="15sp" />
+
+</RelativeLayout>

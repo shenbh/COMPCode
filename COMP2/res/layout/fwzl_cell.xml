@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <!-- <HorizontalScrollView -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:layout_weight="0.35" -->
+
+
+        <!-- android:scrollbars="none" > -->
+
+
+        <!-- <TextView -->
+        <!-- android:id="@+id/left_tv" -->
+
+
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="match_parent" -->
+        <!-- android:paddingLeft="10dp" -->
+        <!-- android:singleLine="true" -->
+        <!-- android:text="个人单月服务质量系数fhgrtfghthty" -->
+        <!-- android:textSize="16sp" /> -->
+        <!-- </HorizontalScrollView> -->
+
+        <TextView
+            android:id="@+id/left_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.35"
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp"
+            android:singleLine="true"
+            android:text="个人单月服务质量系数fhgrtfghthty"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/right_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp"
+            android:text=" 686.35"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/bottom_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:paddingLeft="10dp"
+        android:paddingRight="0dp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/app_gray_drak" />
+
+    <!-- <com.newland.comp.view.DashedLineView -->
+    <!-- android:layout_height="20px" android:layout_width="match_parent"  android:layout_marginLeft="10dp" android:layout_marginRight="10dp" -->
+    <!-- /> -->
+
+</LinearLayout>
